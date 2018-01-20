@@ -1,0 +1,120 @@
+/* For use in src/lib/core/theming/_palette.scss */
+$md-coltprimary: (
+    50 : #f9e4e5,
+    100 : #efbcbe,
+    200 : #e59093,
+    300 : #db6367,
+    400 : #d34147,
+    500 : #cb2026,
+    600 : #c61c22,
+    700 : #be181c,
+    800 : #b81317,
+    900 : #ac0b0d,
+    A100 : #ffd9d9,
+    A200 : #ffa6a6,
+    A400 : #ff7374,
+    A700 : #ff595a,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-coltaccent: (
+    50 : #e0e0e0,
+    100 : #b3b3b3,
+    200 : #808080,
+    300 : #4d4d4d,
+    400 : #262626,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #a6a6a6,
+    A200 : #8c8c8c,
+    A400 : #737373,
+    A700 : #666666,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$md-coltwarn: (
+    50 : #f1f1f1,
+    100 : #dcdbdd,
+    200 : #c5c3c6,
+    300 : #aeabaf,
+    400 : #9c999e,
+    500 : #8b878d,
+    600 : #837f85,
+    700 : #78747a,
+    800 : #6e6a70,
+    900 : #5b575d,
+    A100 : #eccefb,
+    A200 : #daa0f7,
+    A400 : #cb64ff,
+    A700 : #c34bff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+@import '~@alfresco/adf-content-services/theming';
+@import '~@alfresco/adf-process-services/theming';
+@import '~@alfresco/adf-core/theming';
+
+@import '~@angular/material/theming';
+
+
+@include mat-core();
+
+$primary: mat-palette($md-coltprimary);
+$accent:  mat-palette($md-coltaccent);
+$warn:    mat-palette($md-coltwarn);
+$theme:   mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($theme);
+@include adf-content-services-theme($theme);
+@include adf-process-services-theme($theme);
+@include adf-core-theme($theme);
+@include adf-form-container-widget-theme($theme);

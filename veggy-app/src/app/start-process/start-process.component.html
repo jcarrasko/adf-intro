@@ -1,0 +1,12 @@
+<!--
+<adf-start-process
+  [appId]="appId"
+  >
+</adf-start-process>
+-->
+
+<adf-start-form *ngIf="processDefId" 
+  [processDefinitionId]="processDefId"
+  [showRefreshButton]="false"
+  (outcomeClick)="onOutcomeClick()">
+</adf-start-form>

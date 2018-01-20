@@ -1,0 +1,13 @@
+<adf-toolbar color="primary">
+  <adf-toolbar-title>
+    <a mat-button routerLink="/">ADF</a>
+  </adf-toolbar-title>
+
+  <a mat-button *ngIf="!isLoggedIn()" href="" routerLink="/login">Login</a>
+  <button *ngIf="isLoggedIn()" mat-button (click)="onOrders()">New Order</button>
+  <a *ngIf="isLoggedIn()" mat-button href="" routerLink="/apps">Apps</a>
+  <a *ngIf="isLoggedIn()" mat-button href="" routerLink="/documentlist">Documents</a>
+  <button *ngIf="isLoggedIn()" mat-button (click)="logout()">Logout</button>
+</adf-toolbar>
+
+<router-outlet></router-outlet>

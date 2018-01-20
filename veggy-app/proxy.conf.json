@@ -1,0 +1,12 @@
+{
+  "/alfresco": {
+    "target": "http://demoz:8080",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/activiti-app": {
+    "target": "http://demoz:9090",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

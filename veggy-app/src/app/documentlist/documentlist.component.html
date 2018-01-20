@@ -1,0 +1,61 @@
+<adf-toolbar>
+  <adf-toolbar-title>
+    <adf-breadcrumb
+      class="files-breadcrumb"
+      root="Orders"
+      rootId="9b7c2eb0-a8c5-4eaa-b1bd-c2ab62675d79"
+      [target]="documentList"
+      [folderNode]="documentList.folderNode">
+    </adf-breadcrumb>
+  </adf-toolbar-title>
+
+  
+
+</adf-toolbar>
+
+
+<adf-document-list
+  #documentList
+  [currentFolderId]="'9b7c2eb0-a8c5-4eaa-b1bd-c2ab62675d79'"    
+  (preview)="showPreview($event)">
+
+
+  <data-columns>
+    <data-column key="$thumbnail" type="image"></data-column>
+    <data-column title="Name" key="name" class="full-width ellipsis-cell"></data-column>
+    <data-column
+        title="Created By" 
+        key="createdByUser.displayName">
+    </data-column>
+
+
+   <data-column  title="Order name" key="properties" [sortable]="false">
+      <ng-template let-value="value" let-context="$implicit">
+          <div *ngIf="value"> {{value['veg:order_name']}} </div>
+   </ng-template> 
+  </data-column>
+
+   <data-column  title="Phone" key="properties" [sortable]="false"> 
+      <ng-template let-value="value" let-context="$implicit"> 
+          <div *ngIf="value"> {{value['veg:phone']}} </div> 
+   </ng-template> 
+  </data-column>
+
+  <data-column  title="Is Urgent" key="properties" [sortable]="false">
+      <ng-template let-value="value" let-context="$implicit">
+          <div *ngIf="value"> {{value['veg:is_urgent']}} </div>
+   </ng-template>
+  </data-column>
+
+
+</data-columns>
+
+</adf-document-list>
+
+<adf-viewer
+  [showViewer]="showViewer" 
+  [overlayMode]="true" 
+  [fileNodeId]="nodeId"
+  (goBack)="onGoBack($event)">
+</adf-viewer>
+<file-uploading-dialog></file-uploading-dialog>
