@@ -1,5 +1,3 @@
-# adf-intro
-
 This is an example for setting up a simple application using Alfresco Development Framework (ADF).
 
 # Use Case:
